@@ -19,3 +19,12 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
  * The cleaner shorthand for printing output.
  */
 fun Any?.println() = println(this)
+
+/**
+ * Day2 helper functions
+ */
+fun String.splitIntoN(n: Int): List<String> =
+    this.chunked(this.length / n)
+
+fun List<String>.hasInvalidId(): Boolean =
+    this.distinct().size == 1
